@@ -1,0 +1,19 @@
+---
+permalink: 
+    build: "/categories/"
+    preview: "/categories/"
+layout: layouts/base.njk
+title: "Categories"
+description: "This is the list of Categories"
+---
+<div>
+    {% if isServerless == "true" %}
+        <marquee style="color: red;">PREVIEW MODE PREVIEW MODE PREVIEW MODE PREVIEW MODE</marquee>
+    {% endif %}
+    <h1>Categories</h1>
+    <ul>
+        {% for category in categories %}
+        <li><a href="/{{ category.full_slug }}/">{{ category.content.Category }}</a></li>
+        {% endfor %}
+    </ul>
+</div>

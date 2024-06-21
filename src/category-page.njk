@@ -1,0 +1,34 @@
+---
+pagination:
+    data: categories
+    size: 1
+    alias: category
+permalink: 
+    build: "{{ category.full_slug }}/"
+    preview: "/categories/:slug/"
+layout: layouts/base.njk
+eleventyComputed: 
+    title: "{{ category.content.SEO[0].title }}"
+    description: "{{ category.content.SEO[0].description }}"
+    canonical: "{{ category.content.SEO[0].canonical }}"
+    noindex: "{{ category.content.SEO[0].noindex }}"
+    og_title: "{{ category.content.SEO[0].og_title }}"
+    og_description: "{{ category.content.SEO[0].og_description }}"
+    og_image: "{{ category.content.SEO[0].og_image.filename }}"
+---
+<div>
+    {% set slug = eleventy.serverless.path.slug %}
+    {% if isServerless == "true" %}
+        <marquee style="color: red;">PREVIEW MODE PREVIEW MODE PREVIEW MODE PREVIEW MODE</marquee>
+        {% set found = false %}
+        {% for c in categories %}
+            {% if c.slug == slug and not found %}
+                {% set category = c %}
+                {% set found = true %}
+                {% include "category-details.njk" %}
+            {% endif %}
+        {% endfor %}
+    {% else %}
+        {% include "category-details.njk" %}
+    {% endif %}
+</article>

@@ -1,0 +1,19 @@
+---
+permalink: 
+    build: "/articles/"
+    preview: "/articles/"
+layout: layouts/base.njk
+title: "Articles"
+description: "This is the list of Articles"
+---
+<div>
+    {% if isServerless == "true" %}
+        <marquee style="color: red;">PREVIEW MODE PREVIEW MODE PREVIEW MODE PREVIEW MODE</marquee>
+    {% endif %}
+    <h1>Articles</h1>
+    <ul>
+        {% for article in articles %}
+        <li><a href="/{{ article.full_slug }}/">{{ article.content.Title }}</a></li>
+        {% endfor %}
+    </ul>
+</div>

@@ -1,0 +1,8 @@
+node_modules
+package-lock.json
+_site
+.env
+# Netlify (build mode)
+.netlify
+netlify
+netlify.toml

@@ -1,0 +1,19 @@
+---
+permalink: 
+    build: "/authors/"
+    preview: "/authors/"
+layout: layouts/base.njk
+title: "Authors"
+description: "This is the list of Authors"
+---
+<div>
+    {% if isServerless == "true" %}
+        <marquee style="color: red;">PREVIEW MODE PREVIEW MODE PREVIEW MODE PREVIEW MODE</marquee>
+   {% endif %}
+    <h1>Authors</h1>
+    <ul>
+        {% for author in authors | sortAuthorsByName %}
+        <li><a href="/{{ author.full_slug }}/">{{ author.content.Name }}</a></li>
+        {% endfor %}
+    </ul>
+</div>

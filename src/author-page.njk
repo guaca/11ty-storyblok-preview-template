@@ -1,0 +1,36 @@
+---
+pagination:
+    data: authors
+    size: 1
+    alias: author
+permalink: 
+    build: "{{ author.full_slug }}/"
+    preview: "/authors/:slug/"
+layout: layouts/base.njk
+eleventyComputed: 
+    title: "{{ author.content.SEO[0].title }}"
+    description: "{{ author.content.SEO[0].description }}"
+    canonical: "{{ author.content.SEO[0].canonical }}"
+    noindex: "{{ author.content.SEO[0].noindex }}"
+    og_title: "{{ author.content.SEO[0].og_title }}"
+    og_description: "{{ author.content.SEO[0].og_description }}"
+    og_image: "{{ author.content.SEO[0].og_image.filename }}"
+---
+
+<div>
+    {% set slug = eleventy.serverless.path.slug %}
+    {% if isServerless == "true" %}
+        <marquee style="color: red;">PREVIEW MODE PREVIEW MODE PREVIEW MODE PREVIEW MODE</marquee>
+        {% set found = false %}
+        {% for a in authors %}
+        
+            {% if a.slug == slug and not found %}
+                {% set author = a %}
+                {% set found = true %}
+                {% include "author-details.njk" %}
+            {% endif %}
+        {% endfor %}
+    {% else %}
+        {% include "author-details.njk" %}
+    {% endif %}
+</div>

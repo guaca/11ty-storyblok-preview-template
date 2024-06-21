@@ -1,0 +1,9 @@
+<h1>{{ home.content.Heading }}</h1>
+<p class="home-subtitle">{{ home.content.Subtitle }}</p>
+
+<h2>Highlighted Articles</h2>
+<ul>
+    {% for article in home.content.Highlights %}
+    <li><a href="/{{ article.fullSlug }}/">{{ article.content.Title }}</a></li>
+    {% endfor %}
+</ul>

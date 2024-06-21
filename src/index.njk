@@ -1,0 +1,26 @@
+---
+pagination:
+    data: home
+    size: 1
+permalink: 
+    build: "/"
+    preview: "/"
+layout: layouts/base.njk
+eleventyComputed: 
+    title: "{{ home.content.SEO[0].title }}"
+    description: "{{ home.content.SEO[0].description }}"
+    canonical: "{{ home.content.SEO[0].canonical }}"
+    noindex: "{{ home.content.SEO[0].noindex }}"
+    og_title: "{{ home.content.SEO[0].og_title }}"
+    og_description: "{{ home.content.SEO[0].og_description }}"
+    og_image: "{{ home.content.SEO[0].og_image.filename }}"
+---
+<article>
+    {% if isServerless == "true" %}
+        <marquee style="color: red;">PREVIEW MODE PREVIEW MODE PREVIEW MODE PREVIEW MODE</marquee>
+        {% include "home-details.njk" %}
+    {% else %}
+        {% include "home-details.njk" %}
+    {% endif %}
+
+</article>
