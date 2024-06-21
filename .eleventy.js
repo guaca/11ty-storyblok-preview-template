@@ -2,11 +2,6 @@ require('dotenv').config()
 const { EleventyServerlessBundlerPlugin } = require("@11ty/eleventy");
 
 module.exports = function (eleventyConfig) {
-  // Add ServerlessBundler Plugin
-  eleventyConfig.addPlugin(EleventyServerlessBundlerPlugin, {
-    name: "preview", 
-    functionsDir: "./netlify/functions/"
-  });
   // Add IS_SERVERLESS variable as global data
   eleventyConfig.addGlobalData("isServerless", process.env.IS_SERVERLESS);
   // Add the .env domain as GlobalData to use in SEO meta data
