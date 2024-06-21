@@ -1,0 +1,48 @@
+[[redirects]]
+from = "/categories/:slug/"
+to = "/.netlify/functions/preview"
+status = 200
+force = true
+_generated_by_eleventy_serverless = "preview"
+
+[[redirects]]
+from = "/categories/"
+to = "/.netlify/functions/preview"
+status = 200
+force = true
+_generated_by_eleventy_serverless = "preview"
+
+[[redirects]]
+from = "/authors/:slug/"
+to = "/.netlify/functions/preview"
+status = 200
+force = true
+_generated_by_eleventy_serverless = "preview"
+
+[[redirects]]
+from = "/authors/"
+to = "/.netlify/functions/preview"
+status = 200
+force = true
+_generated_by_eleventy_serverless = "preview"
+
+[[redirects]]
+from = "/articles/:slug/"
+to = "/.netlify/functions/preview"
+status = 200
+force = true
+_generated_by_eleventy_serverless = "preview"
+
+[[redirects]]
+from = "/articles/"
+to = "/.netlify/functions/preview"
+status = 200
+force = true
+_generated_by_eleventy_serverless = "preview"
+
+[[redirects]]
+from = "/"
+to = "/.netlify/functions/preview"
+status = 200
+force = true
+_generated_by_eleventy_serverless = "preview"

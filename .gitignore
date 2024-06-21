@@ -4,5 +4,4 @@ _site
 .env
 # Netlify (build mode)
 .netlify
-netlify
-netlify.toml
+netlify/functions/preview/*
