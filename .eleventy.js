@@ -1,5 +1,4 @@
 require('dotenv').config()
-const { EleventyServerlessBundlerPlugin } = require("@11ty/eleventy");
 
 module.exports = function (eleventyConfig) {
   // Add IS_SERVERLESS variable as global data
